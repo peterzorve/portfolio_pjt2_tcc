@@ -1,0 +1,1 @@
+pip install torch torchtext spacy flask numpy gunicorn

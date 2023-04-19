@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+
+<!-- <section class="text-dark p-5  text-center text-sm-start"> 
+    <div class="container bg-light">
+        <div class="d-sm-flex">   
+           
+
+            <div class="m-5">
+                <h2 class="text-dark bold"> Text Summarizer - Problem Definition  </h2>
+                <P class="lead my-4">
+                    One of the  <span class="text-warning bold"> most difficult tasks in research is 
+                        reading an
+                </P>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+
+
+<section class="text-dark p-1  text-center text-sm-start"> 
+    <div class="container bg-light">
+        <h4 class="text-dark bold text-center font_type_cambria"> Toxic Comment Classifier (TCC)   </h4>
+        <!-- <h4 class="text-dark bold text-center"> Upload a data (.csv or excel), enter the target you want to predict,  and start making prediction </h4> -->
+        <p class="text-center font_type_courier">   Type comment to see the classification     </p> 
+
+    </div>
+</section>
+
+
+
+            {% if classify_dictionary_ | length > 0 %}
+
+                <h4 class="text-center font_type_cambria text-primary"> Results   </h4>
+
+                {% for (comments, response) in classify_dictionary_.items() %}
+                        <div class="container">
+                            <form action="/" method="POST", enctype="multipart/form-data">
+                                <div class="row g-3 d-flex justify-content-center" >          
+                                    <div class="col-sm-12 col-md-12 col-lg-8">                      
+                                        <div class="container">
+                                            <div class="row d-flex justify-content-center" >
+                                                <div class="col text-center text-dark  font_type_courier"> <hr class="text-primary h6" size="6"> <span> <u> {{ comments }} </u>  </span>   </div>    
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </form>
+                        </div>
+
+                        <section  class="p-2">
+                            <div class="container  ">
+                                <div class="row d-flex justify-content-center" >
+                                    <div class="col-sm-12 col-md-12 col-lg-8">    
+                                        <div class="container  ">
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col">  <button class="bg-light text-dark h6 one_line border_line_light font_type_courier"> <span> Toxic         </span>  <br> <span class="font_type_cambria text-danger">  {{ response[0] }} </span>  </button>   </div>  
+                                                <div class="col">  <button class="bg-light text-dark h6 one_line border_line_light font_type_courier"> <span> Severe_Toxic  </span>  <br> <span class="font_type_cambria text-danger">  {{ response[1] }} </span>  </button>   </div>
+                                                <div class="col">  <button class="bg-light text-dark h6 one_line border_line_light font_type_courier"> <span> Obscene       </span>  <br> <span class="font_type_cambria text-danger">  {{ response[2] }} </span>  </button>   </div>
+                                                <div class="col">  <button class="bg-light text-dark h6 one_line border_line_light font_type_courier"> <span> Threat        </span>  <br> <span class="font_type_cambria text-danger">  {{ response[3] }} </span>  </button>   </div>  
+                                                <div class="col">  <button class="bg-light text-dark h6 one_line border_line_light font_type_courier"> <span> Insult        </span>  <br> <span class="font_type_cambria text-danger">  {{ response[4] }} </span>  </button>   </div>
+                                                <div class="col">  <button class="bg-light text-dark h6 one_line border_line_light font_type_courier"> <span> Identity_Hate </span>  <br> <span class="font_type_cambria text-danger">  {{ response[5] }} </span>  </button>   </div>
+                                                <!-- <hr> -->
+                                            </div>
+                                        </div>              
+                                    </div>            
+                                </div>
+                            </div>
+                        </section>      
+                        <br>
+                        <!-- <br>   -->
+                {% endfor %}
+            {% endif %}
+            
+
+            <section  class="p-1">
+                <div class="container  ">
+                    <form action="/" method="POST", enctype="multipart/form-data">
+                        <div class="row g-3 d-flex justify-content-center" >          
+                                <div class="col-sm-4 col-md-4 col-lg-8">                      
+                                    <div class="container">
+                                        <div class="row  d-flex justify-content-center" >
+                                            <div class="col      text-dark p-1 border_line_comment">      <input type="text"    class="form-control font_type_courier"  placeholder="Type the comment to be classified"   name="comment_" required>  </div>    
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="col-sm-4 col-md-4 col-lg-2">    
+                                    <div class="container">
+                                        <div class="row d-flex justify-content-center">
+                                            <div class="col text-dark p-1 border_line_comment text-center">   <button type="submit" class="btn btn-warning font_type_courier borderexample_3" name="submit_tcc" value="text_classifier"> Upload</button>     </div>
+                                        </div>
+                                    </div>              
+                                </div> 
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+
+{% endblock %}
+
+

@@ -1,0 +1,121 @@
+
+
+
+<!-- useful url_link = 'https://www.youtube.com/watch?v=4sosXZsdy-s' -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"   rel="stylesheet"  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"   crossorigin="anonymous">
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+    
+    <style>
+        .border_1                   {   border-width:2px;  border-style:solid;  border-color:#dcd7d7;  border-radius: 6px; }
+        .border_2                   {   border-width:4px;  border-style:solid;  border-color:#b17e18;  border-radius: 10px  ; }
+
+        .font_type_courier          {   font-family: 'Courier New', Courier, monospace;                  }
+        .font_type_cambria          {   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', seri   f;}
+
+        .bg_color_nar               {   background-color: #4d2f01;}
+
+        .bg_image_1                 {   background-image: url('static/images/background/background_1.jpg') ; background-repeat: no-repeat; background-size: cover;}
+        .bg_image_2                 {   background-image: url('static/images/background/background_2.jpg') ; background-repeat: no-repeat; background-size: cover;}
+        .bg_image_3                 {   background-image: url('static/images/background/background_3.jpg') ; background-repeat: no-repeat; background-size: cover;} /*  opacity: 0.8;}  */
+        .bg_image_4                 {   background-image: url('static/images/background/background_4.jpg') ; background-repeat: no-repeat; background-size: cover;} 
+        .bg_image_5                 {   background-image: url('static/images/background/background_5.jpg') ; background-repeat: no-repeat; background-size: cover;} 
+        .bg_image_5                 {   background-image: url('static/images/background/background_6.jpg') ; background-repeat: no-repeat; background-size: cover;} 
+        .bg_image_7                 {   background-image: url('static/images/background/background_7.jpg') ; background-repeat: no-repeat; background-size: cover;} 
+        .bg_image_8                 {   background-image: url('static/images/background/background_8.jpg') ; background-repeat: no-repeat; background-size: cover;} 
+        .bg_image_9                 {   background-image: url('static/images/background/background_9.jpg') ; background-repeat: no-repeat; background-size: cover;} 
+
+        .bg_color_publication       {   background-color: #2007af;}
+        .border_line_publication    {   border-width:2px;  border-style:solid;  border-color:#000000;  background-color: #ffffff; border-radius: 10px;}
+
+        .borderexample_3            {   border-width:1px;  border-style:solid;  border-color:#000000;  border-radius: 10px;                 }
+        .border_line_libraries      {   border-width:1px;  border-style:solid;  border-color:rgba(255, 221, 0, 0.99);  border-radius: 10px; }
+        .border_line_libraries_con  {   border-width:3px;  border-style:solid;  border-color:rgba(0, 0, 0, 0.99); border-radius: 18px;      }
+        .border_line_language       {   border-width:7px;  border-style:solid;  border-color:rgba(41, 6, 216, 0.99);  border-radius: 20px;  }
+        .border_line_no_color       {   border-width:1px;  border-style:solid;  border-radius: 10px; }
+        .border_line_comment        {   border-width:2px;  border-style:solid;  border-color:rgba(0, 0, 0, 0.99); border-radius: 10px;      }
+        .border_line_light          {   border-width:1px;  border-style:solid;  border-color:rgba(11, 11, 11, 0.99);  border-radius: 10px;  }
+
+        .one_line                   {   width: 100%;                    }   
+        .font_size_very_small       {   font-size: 12px                 }
+
+        .navbar                     {   height: 12vh;                   }
+        .first_container            {   margin-top: calc(4vh + 16px);   }
+        .color_blue                 {   color: rgb(0, 0, 255);        }
+        .align_right                {   text-align: right;              }
+        .align_left                 {   text-align: left;               }
+        .column_gab                 {   column-gap: 20px;               }
+
+        .border_line_input          {   border-width:2px;  border-style:solid;  border-color:rgba(0, 0, 0, 0.99);  border-radius: 10px;     }
+
+    </style>
+
+    <title>Peter Zorve</title>
+</head>
+
+<body>
+
+<!-- Navigation Bar  -->
+    <!-- <section class="text-light p-2 text-center text-sm-start mb-3 bg_image_3"> 
+        <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top  bg_image_3 font_type_courier">
+            <div class="container">
+                <a href="/"   class="navbar-brand text-warning p-1 m-1 border_1"> Home Page </a>
+                <button  class="navbar-toggler"   type="button"   data-bs-toggle="collapse"    data-bs-target="#navmenu">  <span class="navbar-toggler-icon"></span> Menu </button>
+                <div class="collapse navbar-collapse bg_image_3" id="navmenu">
+                    <ul class="navbar-nav ms-auto text-light">                   
+                        <li class="nav-item p-1" > <a href="#projects__"  class="nav-link  text-warning  text-center border_1"                                                                   > Projects             </a>    </li>
+                            <li class="nav-item p-1" > <a href="#publications__"  class="nav-link  text-warning  text-center border_1"                                                           > Publications         </a>    </li>
+                            <li class="nav-item p-1" > <a href="#"                                                          class="nav-link  text-warning  text-center border_1"                 > Resume               </a>    </li>
+                            <li class="nav-item p-1" > <a href="https://www.linkedin.com/in/peter-zorve-51a4b0114/"         class="nav-link  text-warning  text-center border_1"  target="_blank"> LinkedIn             </a>    </li>
+                            <li class="nav-item p-1" > <a href="https://github.com/peterzorve"                              class="nav-link  text-warning  text-center border_1"  target="_blank"> GitHub               </a>    </li>
+                            <li class="nav-item p-1" > <a href="#"                                                          class="nav-link  text-warning  text-center border_1"                 > Contact Information  </a>    </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </section> -->
+
+
+
+
+        <section id="header">
+            <a href="#"><img src="static/logo.png" class="logo" alt=""></a>
+    
+            <div>
+                <ul id="navbar">
+                    <li><a class="active"   href="#">Home</a></li>
+                    <li><a                  href="">GitHub</a></li>
+                    <li><a                  href="">LinkedIn</a></li>
+                    <li><a                  href="">Publications</a></li>
+                    <li><a                  href="">Resume</a></li>
+                    <li><a                  href="">Contact</a></li>
+                    <!-- <li id="lg-bag"><a href="cart.html"><i class="far fa-shopping-bag"></i></a></li> -->
+                    <a href="#" id="close"><i class="far fa-times"></i></a>
+                </ul>
+            </div>
+            <div id="mobile">
+                <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
+                <i id="bar" class="fas fa-outdent"></i>
+            </div>
+        </section>
+    
+    
+        {% block content %}  
+        {% endblock %}
+
+
+    <script  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"  crossorigin="anonymous">  </script>
+
+</body>
+</html>
